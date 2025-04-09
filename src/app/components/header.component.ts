@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header.component';
+
 // @Component is a decorator that tells Angular to create a new component
 // selector is the CSS selector that identifies this component in the HTML
 // templateUrl is the HTML file that describes the UI of the component
@@ -9,11 +9,15 @@ import { HeaderComponent } from './header.component';
 // title is a property that defines the title of the component
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  selector: 'app-header',
+  imports: [RouterOutlet],
+  // template: '<h1>App Header Component</h1>' is a template literal
+  // this is the option to use if the template is simple and small
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.css',
+  // standalone means that the component is self-contained and does not need to be imported into another component  
+  standalone: true
 })
-export class AppComponent {
-  title = 'angular101';
+export class HeaderComponent {
+  title = 'App Header Component';
 }
