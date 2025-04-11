@@ -10,7 +10,6 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterOutlet],
   // template: '<h1>App Header Component</h1>' is a template literal
   // this is the option to use if the template is simple and small
   templateUrl: './header.component.html',
