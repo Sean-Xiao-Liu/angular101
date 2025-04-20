@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { DUMMY_USERS } from '../dummy-users';
+
+// Generate a random index between 0 and the length of the DUMMY_USERS array
+const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
 @Component({
   selector: 'app-user',
@@ -7,6 +11,13 @@ import { Component } from '@angular/core';
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
+
 export class UserComponent {
   title = 'User Component';
+  // This property would be available in the template
+  selectedUser = DUMMY_USERS[randomIndex];
+
+  onSelectUser(selectedUser: any) {
+    this.selectedUser = selectedUser;
+  }
 }
