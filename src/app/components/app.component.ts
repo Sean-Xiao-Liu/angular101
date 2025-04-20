@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from '../header/header.component';
+import { HeaderComponent } from './header/header.component';
+import { UserComponent } from './user/user.component';
 // @Component is a decorator that tells Angular to create a new component
 // selector is the CSS selector that identifies this component in the HTML
 // templateUrl is the HTML file that describes the UI of the component
@@ -10,7 +10,7 @@ import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent],
+  imports: [HeaderComponent, UserComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
