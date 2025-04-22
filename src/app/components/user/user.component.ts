@@ -17,10 +17,12 @@ export class UserComponent {
   // This property would be available in the template
   selectedUser = DUMMY_USERS[randomIndex];
 
+  // This is a method that selects a user
   onSelectUser(selectedUser: any) {
     this.selectedUser = selectedUser;
+    console.log('Selected user:', this.selectedUser.name);
   }
-  
+
   // This is a getter method that returns the image path for the selected user
   get imagePath() {
     return 'assets/images/users/' + this.selectedUser.avatar;
