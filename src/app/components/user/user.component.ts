@@ -20,4 +20,9 @@ export class UserComponent {
   onSelectUser(selectedUser: any) {
     this.selectedUser = selectedUser;
   }
+  
+  // This is a getter method that returns the image path for the selected user
+  get imagePath() {
+    return 'assets/images/users/' + this.selectedUser.avatar;
+  }
 }
