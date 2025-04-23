@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 // @Component is a decorator that tells Angular to create a new component
 // selector is the CSS selector that identifies this component in the HTML
