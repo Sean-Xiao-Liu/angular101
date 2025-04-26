@@ -26,6 +26,7 @@ export class UserComponent {
     // const randomIndex = this.getRandomIndex;
     this.randomIndex = this.getRandomIndex;
     // update the selectedUser signal with the new random index
+    // have to use the set method to update the signal
     this.selectedUser.set(DUMMY_USERS[this.randomIndex]);
     // the reason to call this.selectedUser() is because the signal is a function
     console.log('Selected user:', this.selectedUser().name);
