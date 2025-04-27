@@ -20,4 +20,11 @@ import { DUMMY_USERS } from './dummy-users';
 export class AppComponent {
   title = 'angular101';
   users = DUMMY_USERS;
+  selectedUser = '';
+
+  onSelect(id: string) {
+    this.selectedUser = id;
+    console.log('Selected user from app.component:', id);
+    
+  }
 }

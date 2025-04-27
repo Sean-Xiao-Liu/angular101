@@ -1,4 +1,4 @@
-import { Component, Input, input, computed } from '@angular/core';
+import { Component, Input, input, computed, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-reuseable-user',
@@ -15,6 +15,11 @@ export class ReuseableUserComponent {
   @Input({ required: true }) name!: string;
   @Input({ required: true }) id!: string;
 
+  // the output decorator is used to bind the output properties to the component
+  // the EventEmitter is used to emit the event to the parent component
+  // And emit event means to send the event to the parent component
+  @Output() select = new EventEmitter<string>();
+
   // avatar = input.required<string>();
   // name = input.required<string>();
   // id = input.required<string>();
@@ -27,7 +32,8 @@ export class ReuseableUserComponent {
   onSelectUser() {
     // the () is used to call the function when property are read as single value
     // However if use @Input decorator, the property is read as single value, and the () is not needed
-    console.log('Selected user:', this.name, 'with id:', this.id);
+    this.select.emit(this.id);
+    console.log('Selected user from reuseable-user component:', this.name);
   }
 
   // This is the way to define a property when using @Input decorator
