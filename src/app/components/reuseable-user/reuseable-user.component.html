@@ -1,9 +1,17 @@
 <div>
   <!-- the event binding is used to bind the click event to the onSelectUser method -->
+  <!-- <button (click)="onSelectUser()">
+    <img [src]="imagePath()" [alt]="id()" />
+    <!-- <img src="assets/images/users/{{ selectedUser.avatar }}" alt="{{ selectedUser.avatar}}" />  -->
+    <!-- the binding function used here is the property binding -->
+    <!-- <span>{{ name() }}</span>
+  </button> --> 
+
   <button (click)="onSelectUser()">
     <img [src]="imagePath" [alt]="id" />
     <!-- <img src="assets/images/users/{{ selectedUser.avatar }}" alt="{{ selectedUser.avatar}}" />  -->
     <!-- the binding function used here is the property binding -->
     <span>{{ name }}</span>
   </button>
+
 </div>
