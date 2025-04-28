@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
 import { ReuseableUserComponent } from "./reuseable-user/reuseable-user.component";
+import { TasksComponent } from "./tasks/tasks.component";
 // import the DUMMY_USERS array to use it in the app.component
 import { DUMMY_USERS } from './dummy-users';
 // @Component is a decorator that tells Angular to create a new component
@@ -13,18 +14,19 @@ import { DUMMY_USERS } from './dummy-users';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, UserComponent, ReuseableUserComponent],
+  imports: [HeaderComponent, UserComponent, ReuseableUserComponent, TasksComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'angular101';
   users = DUMMY_USERS;
-  selectedUser = '';
+  selectedUserId = 'u1';
+  name = '';
 
   onSelect(id: string) {
-    this.selectedUser = id;
-    console.log('Selected user from app.component:', id);
-    
+    this.selectedUserId = id;
+    this.name = DUMMY_USERS.find(user => user.id === id)?.name!;  
+    console.log('Selected user from app.component:', this.name);
   }
 }

@@ -29,11 +29,11 @@ export class ReuseableUserComponent {
   //   return 'assets/images/users/' + this.avatar();
   // });
 
-  onSelectUser() {
+  onSelectUserOfReuseableUserComponent() {
     // the () is used to call the function when property are read as single value
     // However if use @Input decorator, the property is read as single value, and the () is not needed
     this.select.emit(this.id);
-    console.log('Selected user from reuseable-user component:', this.name);
+    console.log('Selected user from reuseable-user component:', this.id);
   }
 
   // This is the way to define a property when using @Input decorator
