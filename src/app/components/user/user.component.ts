@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, Output, EventEmitter } from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users';
 
 // Generate a random index between 0 and the length of the DUMMY_USERS array
@@ -13,6 +13,8 @@ import { DUMMY_USERS } from '../dummy-users';
 })
 
 export class UserComponent {
+  @Output() select = new EventEmitter<string>();
+
   title = 'User Component';
   // This is a property that is initialized with the result of the getRandomIndex method
   randomIndex = this.getRandomIndex;
@@ -30,6 +32,7 @@ export class UserComponent {
     this.selectedUser.set(DUMMY_USERS[this.randomIndex]);
     // the reason to call this.selectedUser() is because the signal is a function
     console.log('Selected user:', this.selectedUser().name);
+    this.select.emit(this.selectedUser().id);
   }
 
   // This is a getter method that returns the image path for the selected user

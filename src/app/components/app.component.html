@@ -3,7 +3,7 @@
 <main>
   <ul id="users">
     <li>
-      <app-user></app-user>
+      <app-user  (select)="onSelect($event)"></app-user>
     </li>
     <li>
       <app-reuseable-user
