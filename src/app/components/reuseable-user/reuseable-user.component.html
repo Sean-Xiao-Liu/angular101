@@ -8,10 +8,10 @@
   </button> --> 
 
   <button (click)="onSelectUserOfReuseableUserComponent()">
-    <img [src]="imagePath" [alt]="id" />
+    <img [src]="imagePath" [alt]="user.id" />
     <!-- <img src="assets/images/users/{{ selectedUser.avatar }}" alt="{{ selectedUser.avatar}}" />  -->
     <!-- the binding function used here is the property binding -->
-    <span>{{ name }}</span>
+    <span>{{ user.name }}</span>
   </button>
 
 </div>

@@ -21,10 +21,10 @@ import { DUMMY_USERS } from './dummy-users';
 export class AppComponent {
   title = 'angular101';
   users = DUMMY_USERS;
-  selectedUserId = 'u1';
+  selectedUserId = '';
   name = '';
 
-  onSelect(id: string) {
+  onSelect(id: string ) {
     this.selectedUserId = id;
     this.name = DUMMY_USERS.find(user => user.id === id)?.name!;  
     console.log('Selected user from app.component:', this.name);
