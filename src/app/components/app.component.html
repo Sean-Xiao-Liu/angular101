@@ -14,5 +14,9 @@
       </li>
     }
   </ul>
-  <app-tasks [name]="name"></app-tasks>
+  @if(name) {
+    <app-tasks [name]="name"></app-tasks>
+  } @else {
+    <p id="no-user-selected">No user selected yet</p>
+  }
 </main>

@@ -24,7 +24,7 @@ export class AppComponent {
   selectedUserId = '';
   name = '';
 
-  onSelect(id: string ) {
+  onSelect(id: string) {
     this.selectedUserId = id;
     this.name = DUMMY_USERS.find(user => user.id === id)?.name!;  
     console.log('Selected user from app.component:', this.name);
