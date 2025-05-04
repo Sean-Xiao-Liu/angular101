@@ -4,7 +4,7 @@ import { UserComponent } from './user/user.component';
 import { ReuseableUserComponent } from "./reuseable-user/reuseable-user.component";
 import { TasksComponent } from "./tasks/tasks.component";
 // import the DUMMY_USERS array to use it in the app.component
-import { DUMMY_USERS } from './dummy-users';
+import { DUMMY_USERS } from '../../assets/dummy-users';
 // @Component is a decorator that tells Angular to create a new component
 // selector is the CSS selector that identifies this component in the HTML
 // templateUrl is the HTML file that describes the UI of the component
@@ -24,6 +24,9 @@ export class AppComponent {
   selectedUserId = '';
   name = '';
 
+
+  // the id is emitted from the user component or the reuseable-user component
+  // and app.component will set the selectedUserId and name properties based on the id
   onSelect(id: string) {
     this.selectedUserId = id;
     this.name = DUMMY_USERS.find(user => user.id === id)?.name!;  

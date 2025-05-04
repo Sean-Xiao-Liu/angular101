@@ -1,5 +1,5 @@
 import { Component, signal, Output, EventEmitter } from '@angular/core';
-import { DUMMY_USERS } from '../dummy-users';
+import { DUMMY_USERS } from '../../../assets/dummy-users';
 
 // Generate a random index between 0 and the length of the DUMMY_USERS array
 // const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
