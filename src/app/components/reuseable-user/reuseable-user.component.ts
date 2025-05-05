@@ -1,17 +1,5 @@
 import { Component, Input, input, computed, Output, EventEmitter} from '@angular/core';
-
-// define a type for the user object
-// type User = {
-//   avatar: string;
-//   name: string;
-//   id: string;
-// };
-
-interface User {
-  avatar: string;
-  name: string;
-  id: string;
-}
+import { User } from './user.model';
 
 
 @Component({
