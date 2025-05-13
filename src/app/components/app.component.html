@@ -9,6 +9,7 @@
       <li>
         <app-reuseable-user
           [user]="user"
+          [selected]="user.id === selectedUserId"
           (select)="onSelect($event)"
         ></app-reuseable-user>
       </li>

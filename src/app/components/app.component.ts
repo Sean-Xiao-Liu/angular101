@@ -18,6 +18,7 @@ import { DUMMY_USERS } from '../../assets/dummy-users';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent {
   title = 'angular101';
   users = DUMMY_USERS;
@@ -31,5 +32,9 @@ export class AppComponent {
     this.selectedUserId = id;
     this.name = DUMMY_USERS.find(user => user.id === id)?.name!;  
     console.log('Selected user from app.component:', this.name);
+  }
+
+  get selectedUser() {
+    return this.users.find(user => user.id === this.selectedUserId);
   }
 }

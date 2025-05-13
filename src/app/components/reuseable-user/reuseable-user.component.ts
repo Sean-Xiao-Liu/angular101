@@ -23,6 +23,7 @@ export class ReuseableUserComponent {
   // the output decorator is used to bind the output properties to the component
   // the EventEmitter is used to emit the event to the parent component
   // And emit event means to send the event to the parent component
+  @Input({required: true}) selected!: boolean;
   @Output() select = new EventEmitter<string>();
 
   // avatar = input.required<string>();
