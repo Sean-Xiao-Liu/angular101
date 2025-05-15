@@ -13,4 +13,8 @@ export class NewTaskComponent {
   onCancel() {
     this.cancel.emit(false);
   }
+
+  onCreate() {
+    
+  }
 }
