@@ -3,6 +3,7 @@ import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
 import { ReuseableUserComponent } from "./reuseable-user/reuseable-user.component";
 import { TasksComponent } from "./tasks/tasks.component";
+
 // import the DUMMY_USERS array to use it in the app.component
 import { DUMMY_USERS } from '../../assets/dummy-users';
 // @Component is a decorator that tells Angular to create a new component
