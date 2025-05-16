@@ -1,4 +1,7 @@
-<div class="backdrop"></div>
+<div class="backdrop" (click)="onCancel()">
+  This is the backdrop that cover the whole screen,<br/> use it as background for the
+  Add Task modal 
+</div>
 <dialog open>
   <button class="close-button" (click)="onCancel()">×</button>
   <h2>Add Task</h2>
