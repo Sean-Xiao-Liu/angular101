@@ -1,9 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TaskComponent } from './task/task.component';
 import { NewTaskComponent } from "./new-task/new-task.component";
-import { DUMMY_TASKS } from '../../../assets/tasks/dummy-tasks';
 import { Task } from './task/task.model';
-
+import { TasksService } from '../../services/tasks.service';
 
 @Component({
   selector: 'app-tasks',
@@ -12,22 +11,19 @@ import { Task } from './task/task.model';
   styleUrl: './tasks.component.css',
   standalone: true
 })
-
 export class TasksComponent {
-  // the name property is passed from the app.component.html file
-  // and the name property is used in the tasks.component.html file
   @Input({ required: true }) name!: string;
   @Input({ required: true }) userId!: string;
-  tasks = DUMMY_TASKS;
   isAddingTaskModalVisible = false;
 
+  constructor(private tasksService: TasksService) {}
+
   get filteredTasks() {
-    return this.tasks.filter((task) => task.userId === this.userId);
+    return this.tasksService.getTasksByUserId(this.userId);
   }
 
   onCompleteTask(taskId: string) {
-    // filter out the task with the given id when the user clicks the complete button
-    this.tasks = this.tasks.filter((task) => task.id !== taskId);
+    this.tasksService.removeTask(taskId);
   }
 
   onAddTask() {
@@ -40,6 +36,6 @@ export class TasksComponent {
 
   onUserAddTask(task: Task) {
     task.userId = this.userId;
-    this.tasks.push(task);
+    this.tasksService.addTask(task);
   }
 }
