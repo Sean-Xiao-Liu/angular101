@@ -4,6 +4,7 @@ import { NewTaskComponent } from "./new-task/new-task.component";
 import { DUMMY_TASKS } from '../../../assets/tasks/dummy-tasks';
 import { Task } from './task/task.model';
 
+
 @Component({
   selector: 'app-tasks',
   imports: [TaskComponent, NewTaskComponent],
@@ -35,5 +36,10 @@ export class TasksComponent {
 
   onCancelAddingTask(cancel: boolean) {
     this.isAddingTaskModalVisible = cancel;
+  }
+
+  onUserAddTask(task: Task) {
+    task.userId = this.userId;
+    this.tasks.push(task);
   }
 }

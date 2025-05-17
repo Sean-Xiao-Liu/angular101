@@ -1,29 +1,45 @@
 <div class="backdrop" (click)="onCancel()">
-  This is the backdrop that cover the whole screen,<br/> use it as background for the
-  Add Task modal 
+  This is the backdrop that cover the whole screen,<br />
+  use it as background for the Add Task modal
 </div>
 <dialog open>
   <button class="close-button" (click)="onCancel()">×</button>
   <h2>Add Task</h2>
-  <form>
+  <form (ngSubmit)="onSubmit()">
     <p>
       <label for="title">Title</label>
-      <input type="text" id="title" name="title" />
+      <!-- ngModel is a directive that binds the input field to the enteredTitle variable -->
+      <input type="text" id="title" name="title" [(ngModel)]="enteredTitle" />
     </p>
 
     <p>
       <label for="summary">Summary</label>
-      <textarea id="summary" rows="5" name="summary"></textarea>
+      <textarea
+        id="summary"
+        rows="5"
+        name="summary"
+        [(ngModel)]="enteredSummary"
+      ></textarea>
     </p>
 
     <p>
       <label for="due-date">Due Date</label>
-      <input type="date" id="due-date" name="due-date" />
+      <input
+        type="date"
+        id="due-date"
+        name="due-date"
+        [(ngModel)]="enteredDueDate"
+      />
     </p>
 
     <p class="actions">
+      <button type="button" (click)="onPreview()">Preview</button>
       <button type="button" (click)="onCancel()">Cancel</button>
-      <button type="submit" (click)="onCreate()">Create</button>
+      <!-- the button type is submit so that the form is submitted 
+       when the user clicks the button, and the onSubmit() method is called on the form component
+       the click would also trigger the onCancel() method which closes the modal
+       -->
+      <button type="submit" (click)="onCancel()">Create</button>
     </p>
   </form>
 </dialog>
