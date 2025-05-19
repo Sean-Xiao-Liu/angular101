@@ -1,0 +1,25 @@
+@if (isAddingTaskModalVisible) {
+<!-- In binding, the event belongs to the new-task component, 
+ so the event is passed to the tasks component -->
+<app-new-task
+  (cancel)="onCancelAddingTask($event)"
+  (addTask)="onUserAddTask($event)"
+/>
+}
+
+<section id="tasks">
+  <header>
+    <h2>{{ name }}'s Tasks</h2>
+    <menu>
+      <button (click)="onAddTask()">Add Task</button>
+    </menu>
+  </header>
+
+  <ul>
+    @for (task of filteredTasks; track task.id) {
+    <li>
+      <app-task [task]="task" (complete)="onCompleteTask($event)" />
+    </li>
+    }
+  </ul>
+</section>

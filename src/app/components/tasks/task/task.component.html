@@ -1,0 +1,11 @@
+<app-card>
+  <article>
+    <h2>{{ task.title}}</h2>
+    <!-- the date pipe is a built-in pipe that formats a date value according to locale rules -->
+    <time>Due Date: {{ task.dueDate | date }}</time>
+    <p>Take Summary: {{ task.description }}</p>
+    <p class="actions">
+      <button (click)="onCompleteTask()">Complete</button>
+    </p>
+  </article>
+</app-card>

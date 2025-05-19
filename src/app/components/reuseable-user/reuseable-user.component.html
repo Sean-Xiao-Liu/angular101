@@ -1,0 +1,16 @@
+<app-card>
+  <!-- the event binding is used to bind the click event to the onSelectUser method -->
+  <!-- <button (click)="onSelectUser()">
+    <img [src]="imagePath()" [alt]="id()" />
+    <!-- <img src="assets/images/users/{{ selectedUser.avatar }}" alt="{{ selectedUser.avatar}}" />  -->
+  <!-- the binding function used here is the property binding -->
+  <!-- <span>{{ name() }}</span>
+  </button> -->
+
+  <button (click)="onSelectUserOfReuseableUserComponent()">
+    <img [src]="imagePath" [alt]="user.id" />
+    <!-- <img src="assets/images/users/{{ selectedUser.avatar }}" alt="{{ selectedUser.avatar}}" />  -->
+    <!-- the binding function used here is the property binding -->
+    <span>{{ user.name }}</span>
+  </button>
+</app-card>
