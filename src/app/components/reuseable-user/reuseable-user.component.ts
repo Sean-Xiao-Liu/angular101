@@ -1,10 +1,11 @@
 import { Component, Input, input, computed, Output, EventEmitter} from '@angular/core';
 import { User } from './user.model';
+import { CardComponent } from '../shared/card/card.component';
 
 
 @Component({
   selector: 'app-reuseable-user',
-  imports: [],
+  imports: [CardComponent],
   templateUrl: './reuseable-user.component.html',
   styleUrl: './reuseable-user.component.css'
 })

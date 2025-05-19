@@ -10,10 +10,11 @@ export class TasksService {
   private readonly STORAGE_KEY = 'tasks';
 
   constructor() {
-    // 从 localStorage 加载数据，如果没有则使用 DUMMY_TASKS
+    // load data from localStorage, if not, use DUMMY_TASKS
     const storedTasks = localStorage.getItem(this.STORAGE_KEY);
     console.log("Trying to load tasks from localStorage");
     this.tasks = storedTasks ? JSON.parse(storedTasks) : [...DUMMY_TASKS];
+    console.log("Tasks loaded from localStorage: ", this.tasks);
   }
 
   private saveTasks() {

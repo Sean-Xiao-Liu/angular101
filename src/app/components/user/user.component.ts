@@ -1,13 +1,13 @@
 import { Component, signal, Output, EventEmitter } from '@angular/core';
 import { DUMMY_USERS } from '../../../assets/dummy-users';
-
+import { CardComponent } from '../shared/card/card.component';
 // Generate a random index between 0 and the length of the DUMMY_USERS array
 // const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [],
+  imports: [CardComponent],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
