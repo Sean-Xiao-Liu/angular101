@@ -1,5 +1,10 @@
 @if (isAddingTaskModalVisible) {
-<app-new-task (cancel)="onCancelAddingTask($event)" (addTask)="onUserAddTask($event)" />
+<!-- In binding, the event belongs to the new-task component, 
+ so the event is passed to the tasks component -->
+<app-new-task
+  (cancel)="onCancelAddingTask($event)"
+  (addTask)="onUserAddTask($event)"
+/>
 }
 
 <section id="tasks">
@@ -13,7 +18,7 @@
   <ul>
     @for (task of filteredTasks; track task.id) {
     <li>
-      <app-task [task]="task" (complete)="onCompleteTask($event) " />
+      <app-task [task]="task" (complete)="onCompleteTask($event)" />
     </li>
     }
   </ul>
