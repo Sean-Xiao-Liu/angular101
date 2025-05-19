@@ -1,6 +1,6 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { TasksService } from './services/tasks.service';
+import { TasksService } from './components/tasks/tasks.service';
 
 import { routes } from './app.routes';
 

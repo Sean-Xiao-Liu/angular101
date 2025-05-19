@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Task } from '../components/tasks/task/task.model';
-import { DUMMY_TASKS } from '../../assets/tasks/dummy-tasks';
+import { Task } from './task/task.model';
+import { DUMMY_TASKS } from '../../../assets/tasks/dummy-tasks';
 
+// @Injectable is a decorator that marks a class as injectable
+// providedIn: 'root' means that the service is provided in the root module
+// so it can be injected into any component in the app
 @Injectable({
   providedIn: 'root'
 })
+
 export class TasksService {
   private tasks: Task[] = [];
   private readonly STORAGE_KEY = 'tasks';
