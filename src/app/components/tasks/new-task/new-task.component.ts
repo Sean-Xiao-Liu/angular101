@@ -33,6 +33,7 @@ export class NewTaskComponent {
       completed: false,
       createdAt: new Date().toISOString()
     });
+    this.cancel.emit(false);
   }
 
   onPreview() {
