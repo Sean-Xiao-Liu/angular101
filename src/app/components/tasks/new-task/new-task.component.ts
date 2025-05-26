@@ -6,9 +6,9 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-new-task',
   // FormsModule is a module that provides the ngForm directive
   // need to import it in the component so ngModel is available
-  imports: [FormsModule],
   templateUrl: './new-task.component.html',
-  styleUrl: './new-task.component.css'
+  styleUrl: './new-task.component.css',
+  standalone: false
 })
 export class NewTaskComponent {
   @Output() cancel = new EventEmitter<boolean>();

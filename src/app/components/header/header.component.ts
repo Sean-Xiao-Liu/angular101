@@ -14,7 +14,7 @@ import { Component } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   // standalone means that the component is self-contained and does not need to be imported into another component  
-  standalone: true
+  standalone: false
 })
 export class HeaderComponent {
   title = 'App Header Component';

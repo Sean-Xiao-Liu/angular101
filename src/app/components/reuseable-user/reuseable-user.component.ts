@@ -5,9 +5,10 @@ import { CardComponent } from '../shared/card/card.component';
 
 @Component({
   selector: 'app-reuseable-user',
-  imports: [CardComponent],
+  // imports: [CardComponent],
   templateUrl: './reuseable-user.component.html',
-  styleUrl: './reuseable-user.component.css'
+  styleUrl: './reuseable-user.component.css',
+  standalone: false
 })
 export class ReuseableUserComponent {
   // the input decorator is used to bind the input properties to the component
