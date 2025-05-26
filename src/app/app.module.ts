@@ -10,10 +10,12 @@ import { BrowserModule } from "@angular/platform-browser"; // this is needed whe
 import { SharedModule } from "./components/shared/shared.module";
 import { NewTaskComponent } from "./components/tasks/new-task/new-task.component";
 import { FormsModule } from "@angular/forms";
+import { TasksModule } from "./components/tasks/tasks.module";
+
 @NgModule({
-    declarations: [AppComponent, HeaderComponent, UserComponent, ReuseableUserComponent, TasksComponent, TaskComponent, NewTaskComponent    ],
+    declarations: [AppComponent, HeaderComponent, UserComponent, ReuseableUserComponent],
     bootstrap: [AppComponent], // this is the root component 
-    imports: [BrowserModule, FormsModule, SharedModule]
+    imports: [BrowserModule, FormsModule, SharedModule, TasksModule]
 })
 
 export class AppModule {
